@@ -25,5 +25,10 @@ dev = [
     "ruff>=0.9.1",
 ]
 
-[tool.ruff]
-lint.select = ["E4", "E7", "E9", "F", "I"]
+[tool.ruff.lint]
+select = ["ALL"]
+ignore = [
+    "D203",
+    "D212",
+    "COM812"
+]

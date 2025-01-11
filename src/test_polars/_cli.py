@@ -1,8 +1,9 @@
+import logging
 from pathlib import Path
 
 import polars as pl
 
-from test_polars.utils.csv import get_csv
+from test_polars.utils.process_csv import get_csv
 from test_polars.utils.process_data import (
     join_anti,
     join_full,
@@ -23,16 +24,22 @@ def check_join(csv_request_path: Path, csv_response_path: Path) -> None:
     csv_request_dataframe: pl.DataFrame = get_csv(csv_request_path.absolute())
     csv_response_dataframe: pl.DataFrame = get_csv(csv_response_path.absolute())
 
-    print(f"Full request dataframe: {csv_request_dataframe}")
-    print(f"Full response dataframe: {csv_response_dataframe}")
+    logging.debug("Full request dataframe: %s", csv_request_dataframe)
+    logging.debug("Full response dataframe: %s", csv_response_dataframe)
 
-    print(f"Inner: {join_inner(csv_request_dataframe, csv_response_dataframe)}")
-    print(f"Outer: {join_outer(csv_request_dataframe, csv_response_dataframe)}")
+    logging.debug(
+        "Inner: %s", join_inner(csv_request_dataframe, csv_response_dataframe)
+    )
+    logging.debug(
+        "Outer: %s", join_outer(csv_request_dataframe, csv_response_dataframe)
+    )
 
-    print(f"Left: {join_left(csv_request_dataframe, csv_response_dataframe)}")
-    print(f"Right: {join_right(csv_request_dataframe, csv_response_dataframe)}")
+    logging.debug("Left: %s", join_left(csv_request_dataframe, csv_response_dataframe))
+    logging.debug(
+        "Right: %s", join_right(csv_request_dataframe, csv_response_dataframe)
+    )
 
-    print(f"Full: {join_full(csv_request_dataframe, csv_response_dataframe)}")
+    logging.debug("Full: %s", join_full(csv_request_dataframe, csv_response_dataframe))
 
-    print(f"Semi: {join_semi(csv_request_dataframe, csv_response_dataframe)}")
-    print(f"Anti: {join_anti(csv_request_dataframe, csv_response_dataframe)}")
+    logging.debug("Semi: %s", join_semi(csv_request_dataframe, csv_response_dataframe))
+    logging.debug("Anti: %s", join_anti(csv_request_dataframe, csv_response_dataframe))

@@ -1,3 +1,5 @@
+"""Main module for test_polars."""
+
 import typer
 
 from test_polars._cli import check_join
