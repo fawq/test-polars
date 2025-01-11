@@ -1,0 +1,26 @@
+[project]
+name = "test-polars"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "Krystian Krakowski", email = "kkrakowski22@gmail.com" }
+]
+requires-python = ">=3.10"
+dependencies = [
+    "polars>=1.19.0",
+    "typer>=0.15.1",
+]
+
+[project.scripts]
+test-polars = "test_polars:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[dependency-groups]
+dev = [
+    "mypy>=1.14.1",
+    "ruff>=0.9.1",
+]

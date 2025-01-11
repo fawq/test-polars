@@ -1,0 +1,7 @@
+src_ip,dst_ip,seq_num,index_response
+A.A.A.B,A.A.A.A,1,0
+B.B.B.B,B.B.B.A,2,1
+B.B.B.B,B.B.B.A,3,2
+C.C.C.C,C.C.C.A,4,3
+D.D.D.B,D.D.D.A,5,4
+D.D.D.B,D.D.D.A,5,5
