@@ -1,6 +1,6 @@
-import polars as pl
-
 from pathlib import Path
+
+import polars as pl
 
 
 def get_csv(file_path: Path) -> pl.DataFrame:
