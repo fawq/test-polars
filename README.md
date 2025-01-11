@@ -3,7 +3,7 @@
 ## How to run
 
 ```shell
-uv run -m test_polars
+uv run -m test_polars test/data/ip_request.csv test/data/ip_response.csv
 ```
 
 ## Results
