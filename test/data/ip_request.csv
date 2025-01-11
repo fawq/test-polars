@@ -1,6 +1,6 @@
-src_ip,dst_ip,seq_num,index_request
-A.A.A.A,A.A.A.B,1,0
-B.B.B.A,B.B.B.B,2,1
-B.B.B.A,B.B.B.B,2,2
-C.C.C.A,C.C.C.B,4,3
-D.D.D.A,D.D.D.B,5,4
+src_ip,dst_ip,seq_num,index_request,comment_request
+A.A.A.A,A.A.A.B,1,0,One request from A to B
+B.B.B.A,B.B.B.B,2,1,First request from A to B
+B.B.B.A,B.B.B.B,2,2,Second request from A to B
+C.C.C.A,C.C.C.B,4,3,One request from A to B with wrong seq_num
+D.D.D.A,D.D.D.B,5,4,One request from A to B

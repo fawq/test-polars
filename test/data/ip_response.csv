@@ -1,7 +1,7 @@
-src_ip,dst_ip,seq_num,index_response
-A.A.A.B,A.A.A.A,1,0
-B.B.B.B,B.B.B.A,2,1
-B.B.B.B,B.B.B.A,3,2
-C.C.C.C,C.C.C.A,4,3
-D.D.D.B,D.D.D.A,5,4
-D.D.D.B,D.D.D.A,5,5
+src_ip,dst_ip,seq_num,index_response,comment_response
+A.A.A.B,A.A.A.A,1,0,One response from B to A
+B.B.B.B,B.B.B.A,2,1,First response from B to A
+B.B.B.B,B.B.B.A,3,2,Second response from B to A with wrong seq_num
+C.C.C.C,C.C.C.A,4,3,One response from B to A with wrong seq_num
+D.D.D.B,D.D.D.A,5,4,First response from B to A
+D.D.D.B,D.D.D.A,5,5,Second response from B to A
