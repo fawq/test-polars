@@ -25,9 +25,9 @@ def setup_logging() -> None:
 
 def setup_polars() -> None:
     pl.Config.set_tbl_formatting("ASCII_MARKDOWN")
-    pl.Config.set_tbl_cols(-1)
-    pl.Config.set_tbl_rows(-1)
-    pl.Config.set_fmt_str_lengths(100)
+    pl.Config.set_tbl_rows(200)
+    pl.Config.set_tbl_cols(200)
+    pl.Config.set_fmt_str_lengths(200)
 
 
 def check_join(csv_request_path: Path, csv_response_path: Path) -> None:
