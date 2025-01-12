@@ -2,9 +2,13 @@
 
 ## How to run
 
+### Python
+
 ```shell
 uv run -m test_polars test/data/ip_request.csv test/data/ip_response.csv
 ```
+
+### Rust
 
 ```shell
 cargo run --release test/data/ip_request.csv test/data/ip_response.csv
