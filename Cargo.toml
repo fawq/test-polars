@@ -5,6 +5,7 @@ edition = "2021"
 description = "Add your description here"
 readme = "README.md"
 authors = ["Krystian Krakowski <kkrakowski22@gmail.com>"]
+rust-version = "1.83.0"
 
 [dependencies]
 chrono = "0.4.39"
