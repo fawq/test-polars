@@ -4,6 +4,8 @@
 
 ### Python
 
+[Uv python manager instalation](https://github.com/astral-sh/uv)
+
 Run using uv:
 
 ```shell
@@ -17,6 +19,8 @@ uv run -m test_polars test/data/ip_request.csv test/data/ip_response.csv
 ```
 
 ### Rust
+
+[Rustup rust manager instalation](https://github.com/rust-lang/rustup)
 
 Run using cargo development mode:
 
