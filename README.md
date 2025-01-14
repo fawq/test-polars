@@ -4,11 +4,27 @@
 
 ### Python
 
+Run using uv:
+
+```shell
+uv run test-polars test/data/ip_request.csv test/data/ip_response.csv
+```
+
+or run using uv with module name:
+
 ```shell
 uv run -m test_polars test/data/ip_request.csv test/data/ip_response.csv
 ```
 
 ### Rust
+
+Run using cargo development mode:
+
+```shell
+cargo run test/data/ip_request.csv test/data/ip_response.csv
+```
+
+or run using cargo release mode:
 
 ```shell
 cargo run --release test/data/ip_request.csv test/data/ip_response.csv

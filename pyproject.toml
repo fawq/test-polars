@@ -13,7 +13,7 @@ dependencies = [
 ]
 
 [project.scripts]
-test-polars = "test_polars:main"
+test-polars = "test_polars.__main__:main"
 
 [build-system]
 requires = ["hatchling"]
