@@ -12,6 +12,7 @@ use env_logger::Builder;
 use log::{info, LevelFilter};
 use std::io::Write;
 
+/// Configure logging.
 fn setup_logging() {
     let mut builder = Builder::from_default_env();
 
@@ -29,6 +30,7 @@ fn setup_logging() {
         .init();
 }
 
+/// Configure polars.
 fn setup_polars() {
     env::set_var("POLARS_FMT_TABLE_FORMATTING", "ASCII_MARKDOWN");
     env::set_var("POLARS_FMT_MAX_ROWS", "200");
@@ -36,6 +38,7 @@ fn setup_polars() {
     env::set_var("POLARS_FMT_STR_LEN", "200");
 }
 
+/// Run the main function.
 fn main() {
     setup_logging();
     setup_polars();
