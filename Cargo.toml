@@ -11,4 +11,4 @@ rust-version = "1.83.0"
 chrono = "0.4.39"
 env_logger = "0.11.6"
 log = "0.4.22"
-polars = { version = "0.45.1", features = ["semi_anti_join"] }
+polars = { version = "0.46", features = ["semi_anti_join"] }
