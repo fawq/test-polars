@@ -8,7 +8,7 @@ authors = ["Krystian Krakowski <kkrakowski22@gmail.com>"]
 rust-version = "1.83.0"
 
 [dependencies]
-chrono = "0.4.39"
-env_logger = "0.11.6"
-log = "0.4.22"
-polars = { version = "0.46", features = ["semi_anti_join"] }
+chrono = "0.4"
+env_logger = "0.11"
+log = "0.4"
+polars = { version = "0.47", features = ["semi_anti_join"] }
