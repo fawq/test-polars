@@ -32,10 +32,12 @@ fn setup_logging() {
 
 /// Configure polars.
 fn setup_polars() {
-    env::set_var("POLARS_FMT_TABLE_FORMATTING", "ASCII_MARKDOWN");
-    env::set_var("POLARS_FMT_MAX_ROWS", "200");
-    env::set_var("POLARS_FMT_MAX_COLS", "200");
-    env::set_var("POLARS_FMT_STR_LEN", "200");
+    unsafe {
+        env::set_var("POLARS_FMT_TABLE_FORMATTING", "ASCII_MARKDOWN");
+        env::set_var("POLARS_FMT_MAX_ROWS", "200");
+        env::set_var("POLARS_FMT_MAX_COLS", "200");
+        env::set_var("POLARS_FMT_STR_LEN", "200");
+    }
 }
 
 /// Run the main function.
