@@ -1,11 +1,11 @@
 [package]
 name = "test-polars"
 version = "0.1.0"
-edition = "2021"
+edition = "2024"
 description = "Add your description here"
 readme = "README.md"
 authors = ["Krystian Krakowski <kkrakowski22@gmail.com>"]
-rust-version = "1.83.0"
+rust-version = "1.86.0"
 
 [dependencies]
 chrono = "0.4"
