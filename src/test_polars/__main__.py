@@ -29,7 +29,6 @@ def setup_logging() -> None:
 
 def setup_polars() -> None:
     """Configure polars."""
-    pl.Config.set_tbl_formatting("ASCII_MARKDOWN")
     pl.Config.set_tbl_rows(200)
     pl.Config.set_tbl_cols(200)
     pl.Config.set_fmt_str_lengths(200)
