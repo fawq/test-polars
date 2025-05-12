@@ -9,7 +9,7 @@ use crate::utils::process_data::{
 };
 use chrono::Local;
 use env_logger::Builder;
-use log::{info, LevelFilter};
+use log::{LevelFilter, info};
 use std::io::Write;
 
 /// Configure logging.
@@ -54,8 +54,8 @@ fn main() {
     let df1 = get_csv(PathBuf::from(&args[1]));
     let df2 = get_csv(PathBuf::from(&args[2]));
 
-    info!("Full request dataframe: {}", df1);
-    info!("Full response dataframe: {}", df2);
+    info!("Full request dataframe: {df1}");
+    info!("Full response dataframe: {df2}");
 
     info!("Inner: {}", join_inner(&df1, &df2));
     info!("Outer: {}", join_outer(&df1, &df2));

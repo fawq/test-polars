@@ -53,19 +53,21 @@ def check_join(csv_request_path: Path, csv_response_path: Path) -> None:
     csv_request_dataframe: pl.DataFrame = get_csv(csv_request_path.absolute())
     csv_response_dataframe: pl.DataFrame = get_csv(csv_response_path.absolute())
 
-    logging.info("Full request dataframe: %s", csv_request_dataframe)
-    logging.info("Full response dataframe: %s", csv_response_dataframe)
+    logger = logging.getLogger(__name__)
 
-    logging.info("Inner: %s", join_inner(csv_request_dataframe, csv_response_dataframe))
-    logging.info("Outer: %s", join_outer(csv_request_dataframe, csv_response_dataframe))
+    logger.info("Full request dataframe: %s", csv_request_dataframe)
+    logger.info("Full response dataframe: %s", csv_response_dataframe)
 
-    logging.info("Left: %s", join_left(csv_request_dataframe, csv_response_dataframe))
-    logging.info("Right: %s", join_right(csv_request_dataframe, csv_response_dataframe))
+    logger.info("Inner: %s", join_inner(csv_request_dataframe, csv_response_dataframe))
+    logger.info("Outer: %s", join_outer(csv_request_dataframe, csv_response_dataframe))
 
-    logging.info("Full: %s", join_full(csv_request_dataframe, csv_response_dataframe))
+    logger.info("Left: %s", join_left(csv_request_dataframe, csv_response_dataframe))
+    logger.info("Right: %s", join_right(csv_request_dataframe, csv_response_dataframe))
 
-    logging.info("Semi: %s", join_semi(csv_request_dataframe, csv_response_dataframe))
-    logging.info("Anti: %s", join_anti(csv_request_dataframe, csv_response_dataframe))
+    logger.info("Full: %s", join_full(csv_request_dataframe, csv_response_dataframe))
+
+    logger.info("Semi: %s", join_semi(csv_request_dataframe, csv_response_dataframe))
+    logger.info("Anti: %s", join_anti(csv_request_dataframe, csv_response_dataframe))
 
 def main() -> None:
     """Entry point for test_polars."""
