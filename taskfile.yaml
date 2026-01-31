@@ -1,0 +1,48 @@
+version: "3"
+
+env:
+  PYO3_PYTHON: '{{if eq OS "windows"}}{{.USER_WORKING_DIR}}\\.venv\\Scripts\\python.exe{{else}}.venv/bin/python{{end}}'
+
+vars:
+  QUIET: false
+
+tasks:
+  default:
+    desc: Rebuild mixed workspaces and run all checks
+    cmds:
+      - task: rust-checks
+        vars:
+          QUIET: true
+      - task: python-checks
+        vars:
+          QUIET: true
+      - task: example
+
+  rust-checks:
+    desc: Run Rust checks
+    sources:
+      - Cargo.toml
+    cmds:
+      - cargo check {{if .QUIET}}--quiet{{end}}
+      - cargo fmt --check {{if .QUIET}}--quiet{{end}}
+      - cargo clippy {{if .QUIET}}--quiet{{end}} --all-targets --all-features -- -D warnings 
+
+  python-checks:
+    desc: Run Python type and lint checks
+    sources:
+      - pyproject.toml
+    cmds:
+      - uv run mypy .  # TODO: add quiet flag when supported
+      - uv run ruff check --fix {{if .QUIET}}--quiet{{end}}
+      - uv run pyright  # TODO: add quiet flag when supported
+
+  example:
+    desc: Run python and cargo example test
+    sources:
+      - Cargo.toml
+      - pyproject.toml
+    cmds:
+      - uv run test-polars test/data/ip_request.csv test/data/ip_response.csv
+      - uv run -m test_polars test/data/ip_request.csv test/data/ip_response.csv
+      - cargo run test/data/ip_request.csv test/data/ip_response.csv
+      - cargo run --release test/data/ip_request.csv test/data/ip_response.csv

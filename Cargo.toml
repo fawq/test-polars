@@ -5,10 +5,15 @@ edition = "2024"
 description = "Add your description here"
 readme = "README.md"
 authors = ["Krystian Krakowski <kkrakowski22@gmail.com>"]
-rust-version = "1.88.0"
+rust-version = "1.93.0"
 
 [dependencies]
-chrono = "0.4"
-env_logger = "0.11"
-log = "0.4"
-polars = { version = "0.51", features = ["semi_anti_join"] }
+chrono = "=0.4.43"
+env_logger = "=0.11.8"
+log = "=0.4.29"
+polars = { version = "=0.52.0", features = ["semi_anti_join"] }
+
+[workspace.lints.clippy]
+pedantic = { level = "deny", priority = -1 }
+nursery = { level = "deny", priority = -1 }
+unwrap_used = "deny"
