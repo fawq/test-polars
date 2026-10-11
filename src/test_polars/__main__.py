@@ -12,7 +12,6 @@ from test_polars.utils.process_data import (
     join_full,
     join_inner,
     join_left,
-    join_outer,
     join_right,
     join_semi,
 )
@@ -58,7 +57,6 @@ def check_join(csv_request_path: Path, csv_response_path: Path) -> None:
     logger.info("Full response dataframe: %s", csv_response_dataframe)
 
     logger.info("Inner: %s", join_inner(csv_request_dataframe, csv_response_dataframe))
-    logger.info("Outer: %s", join_outer(csv_request_dataframe, csv_response_dataframe))
 
     logger.info("Left: %s", join_left(csv_request_dataframe, csv_response_dataframe))
     logger.info("Right: %s", join_right(csv_request_dataframe, csv_response_dataframe))

@@ -8,8 +8,8 @@ authors = [
 ]
 requires-python = "~=3.13.0"
 dependencies = [
-    "polars==1.37.1",
-    "typer==0.21.1",
+    "polars==2.0.0",
+    "typer==0.27.3",
 ]
 
 [project.scripts]
@@ -21,9 +21,9 @@ build-backend = "hatchling.build"
 
 [dependency-groups]
 dev = [
-    "mypy==1.19.1",
-    "ruff==0.14.14",
-    "pyright==1.1.408",
+    "mypy==2.4.0",
+    "ruff==0.17.0",
+    "pyright==1.1.414",
 ]
 
 [tool.ruff.lint]
@@ -41,7 +41,8 @@ ignore = [
     "T201",
     "ICN001",
     "PYI029",
-    "RUF100"
+    "RUF100",
+    "CPY001"
 ]
 
 [tool.pyright]

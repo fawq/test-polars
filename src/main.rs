@@ -5,7 +5,7 @@ use std::path::PathBuf;
 
 use crate::utils::process_csv::get_csv;
 use crate::utils::process_data::{
-    join_anti, join_full, join_inner, join_left, join_outer, join_right, join_semi,
+    join_anti, join_full, join_inner, join_left, join_right, join_semi,
 };
 use chrono::Local;
 use env_logger::Builder;
@@ -57,7 +57,6 @@ fn main() {
     info!("Full response dataframe: {df2}");
 
     info!("Inner: {}", join_inner(&df1, &df2));
-    info!("Outer: {}", join_outer(&df1, &df2));
 
     info!("Left: {}", join_left(&df1, &df2));
     info!("Right: {}", join_right(&df1, &df2));
